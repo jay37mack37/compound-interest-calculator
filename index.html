@@ -179,10 +179,10 @@
       <div class="field">
         <label>Rate basis</label>
         <div class="seg" id="basis" role="group" aria-label="Rate basis">
-          <button type="button" class="seg-btn active" data-basis="nominal">Per year</button>
-          <button type="button" class="seg-btn" data-basis="period">Per period</button>
+          <button type="button" class="seg-btn" data-basis="nominal">Per year</button>
+          <button type="button" class="seg-btn active" data-basis="period">Per period</button>
         </div>
-        <p class="seg-hint" id="basis-hint">Nominal annual rate, split across each period.</p>
+        <p class="seg-hint" id="basis-hint">Full rate applies every compounding period (trader model).</p>
       </div>
 
       <div class="field">
@@ -196,8 +196,8 @@
       </div>
 
       <div class="field">
-        <div class="field-head"><label for="years">Time horizon</label><span class="val" id="years-val">20 yr</span></div>
-        <input type="range" id="years" value="20" min="1" max="40" step="1" />
+        <div class="field-head"><label for="years">Time horizon</label><span class="val" id="years-val">1 yr</span></div>
+        <input type="range" id="years" value="1" min="1" max="40" step="1" />
       </div>
 
       <div class="field">
@@ -206,8 +206,8 @@
           <option value="1">Annually</option>
           <option value="2">Semi-annually</option>
           <option value="4">Quarterly</option>
-          <option value="12" selected>Monthly</option>
-          <option value="252">Trading days (252)</option>
+          <option value="12">Monthly</option>
+          <option value="252" selected>Trading days (252)</option>
           <option value="365">Daily</option>
           <option value="0">Continuous</option>
         </select>
@@ -273,7 +273,7 @@
     svg: $("chart"), holder: $("holder"), tooltip: $("tooltip"),
   };
   const basisBtns = Array.from(document.querySelectorAll(".seg-btn"));
-  let basis = "nominal"; // "nominal" | "period"
+  let basis = "period"; // "nominal" | "period"
 
   const VB_W = 800, VB_H = 400;
   const M = { l: 68, r: 18, t: 16, b: 30 };
