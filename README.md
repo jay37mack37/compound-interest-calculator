@@ -4,6 +4,8 @@ An interactive compound-interest visualizer in a single self-contained HTML file
 No build step, no dependencies, no tracking.
 Open `index.html` in any browser, or use the live page linked below.
 
+**[Live demo](https://jay37mack37.github.io/compound-interest-calculator/)**
+
 ## Features
 
 - **Rate basis toggle** - interpret the rate as either a nominal annual rate (split across periods) or a per-period rate (the full rate every compounding step).
